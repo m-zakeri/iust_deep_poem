@@ -313,7 +313,7 @@ class FileFormatFuzzer(object):
 
         # diversities = [i*0.10 for i in range(1,20,2)]
         diversities = [0.2, 0.5, 1.0, 1.2, 1.5, 1.8]
-        start_index = random.randint(0, len(self.test_text) - self.maxlen - 1)
+        start_index = random.randint(0, len(self.text_test) - self.maxlen - 1)
         for diversity in diversities:
             print('-- diversity:', diversity)
             generated = ''
