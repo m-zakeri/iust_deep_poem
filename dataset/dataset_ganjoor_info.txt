@@ -1,0 +1,5 @@
+
+hafez start index:	poem_id	2130
+hafez end index:	poem_id	2624
+
+total ghazal numbers	495
