@@ -313,8 +313,8 @@ class FileFormatFuzzer(object):
 
         # diversities = [i*0.10 for i in range(1,20,2)]
         diversities = [0.2, 0.5, 1.0, 1.2, 1.5, 1.8]
-        start_index = random.randint(0, len(self.text_test) - self.maxlen - 1)
         for diversity in diversities:
+            start_index = random.randint(0, len(self.text_test) - self.maxlen - 1)
             print('-- diversity:', diversity)
             generated = ''
             sentence = self.text_test[start_index: start_index + self.maxlen]
@@ -409,7 +409,7 @@ class FileFormatFuzzer(object):
 def main(argv):
     """ The main function to call train() method"""
     epochs = 100
-    fff = FileFormatFuzzer(maxlen=30, step=1, batch_size=256)
+    fff = FileFormatFuzzer(maxlen=40, step=1, batch_size=256)
     fff.train(epochs=epochs)
     # fff.get_model_summary()
     # fff.load_model_and_generate(model_name='model_6',
