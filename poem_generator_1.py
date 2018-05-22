@@ -25,7 +25,7 @@ from config import dataset_config
 import deep_models
 
 
-class FileFormatFuzzer(object):
+class DeepPoem(object):
     """
     Main class for learn and fuzz process
     """
@@ -56,7 +56,7 @@ class FileFormatFuzzer(object):
 
     def define_model(self, input_dim, output_dim):
         """build the model: a single LSTM layer # we need to deep it"""
-        model, model_name = deep_models.model_7(input_dim, output_dim)
+        model, model_name = deep_models.model_9(input_dim, output_dim)
         return model, model_name
 
     def load_dataset(self):
@@ -409,7 +409,7 @@ class FileFormatFuzzer(object):
 def main(argv):
     """ The main function to call train() method"""
     epochs = 100
-    fff = FileFormatFuzzer(maxlen=40, step=1, batch_size=256)
+    fff = DeepPoem(maxlen=40, step=1, batch_size=128)
     fff.train(epochs=epochs)
     # fff.get_model_summary()
     # fff.load_model_and_generate(model_name='model_6',
