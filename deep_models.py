@@ -26,6 +26,27 @@ def model_0(input_dim, output_dim):
     return model, 'model_0'
 
 
+# Bidirectional LSTM Model
+# summery of result for model_0 (Not deep model):
+#
+#
+def model_1(input_dim, output_dim):
+    """
+
+    :param input_dim:
+    :param output_dim:
+    :return:
+    """
+    # build the model: a single LSTM
+    print('Build model...')
+    model = Sequential()
+    model.add(Bidirectional(LSTM(128), input_shape=input_dim, merge_mode='sum'))
+    model.add(Dense(output_dim))
+    model.add(Activation('softmax'))
+    return model, 'model_1'
+
+
+
 #
 #
 #

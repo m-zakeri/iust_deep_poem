@@ -6,7 +6,7 @@ Poem generator 1
 
 from __future__ import print_function
 
-__version__ = '0.1.1'
+__version__ = '0.1.2'
 __author__ = 'Morteza Zakeri'
 
 import sys
@@ -56,7 +56,7 @@ class DeepPoem(object):
 
     def define_model(self, input_dim, output_dim):
         """build the model: a single LSTM layer # we need to deep it"""
-        model, model_name = deep_models.model_9(input_dim, output_dim)
+        model, model_name = deep_models.model_1(input_dim, output_dim)
         return model, model_name
 
     def load_dataset(self):
@@ -183,7 +183,7 @@ class DeepPoem(object):
         print('Build and compile model ...')
         model, model_name = self.define_model((self.maxlen, len(self.chars)), len(self.chars))
         optimizer = RMSprop(lr=0.01)  # [0.001, 0.01, 0.02, 0.05, 0.1]
-        optimizer = Adam(lr=0.01)
+        # optimizer = Adam(lr=0.01)
         model.compile(optimizer=optimizer,
                       loss='categorical_crossentropy',
                       metrics=['accuracy'])
